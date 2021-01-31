@@ -10,14 +10,35 @@ const  personalMovieDB = {
     privat: false
 };
 
-const a = prompt("Один из последних просмотренных фильмов",""),
-      b = prompt("На сколько оцените его ?", ""),
-      c = prompt("Один из последних просмотренных фильмов",""),
-      d = prompt("На сколько оцените его ?", "");
+    for (let i = 0; i < 2; i++){
+       let a = prompt("Один из последних просмотренных фильмов",""),
+        b = prompt("На сколько оцените его ?", "");
 
-      personalMovieDB.movies[a] = b;
-      personalMovieDB.movies[c] = d;
-
+        if (a != null && b != null, a.length != '' && b.length != '' && a.length < 50 && b.length < 50)
+        {
+            console.log('done')
+            personalMovieDB.movies[a] = b;
+        }
+        else
+        {
+            console.log('error');
+            i--;
+        }
+        
+    }
+    let who = document.getElementById('watcher');
+    if (numberOfFilms <= 10 && numberOfFilms > 0 ){
+       who.textContent = "Просмотрено довольно мало фильмов";
+    }
+     else if (numberOfFilms > 10 || numberOfFilms < 30){
+        who.textContent = "Вы обычный зритель";
+    }
+     else if (numberOfFilms > 30){
+        who.textContent = "Вы киноман";
+    }
+    else{
+        who.textContent = "Ошибка";
+    }
 console.log(personalMovieDB);
 
 
